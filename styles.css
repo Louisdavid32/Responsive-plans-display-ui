@@ -1,0 +1,164 @@
+
+/* Styles généraux */
+body {
+font-family: Arial, sans-serif;
+background-color: #0b0d28;
+color: white;
+margin: 0;
+padding: 0;
+}
+
+.container {
+text-align: center;
+padding: 2rem;
+}
+
+h1 {
+font-size: 1.8rem;
+margin-bottom: 1.3rem;
+position: relative;
+left:-27rem ;
+
+}
+
+/* Conteneur des plans */
+.plans {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 2rem;
+}
+
+/* Styles individuels des plans */
+.plan {
+background-color: #ffffff;
+color: #000000;
+border-radius: 8px;
+padding: 1.5rem;
+width: 300px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+text-align: left;
+transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Effet au hover avec rotation */
+.plan:hover {
+transform: perspective(1000px) rotateX(10deg) rotateY(10deg) scale(1.05);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Titre et prix */
+.plan h2 {
+font-size: 1.2rem;
+margin-bottom: 0.5rem;
+}
+
+.c1 {
+color: #6a5acd; /* Couleur "Plus" */
+}
+
+.c2 {
+color: #ffa500; /* Couleur "Premium" */
+}
+
+.plan .price {
+font-size: 1.4rem;
+font-weight: bold;
+margin-bottom: 0.5rem;
+}
+
+/* Sous-titre */
+.plan .subtitle {
+font-size: 0.9rem;
+color: #8b8a8ae0;
+opacity: 2;
+margin-bottom: 1rem;
+}
+
+/* Listes */
+.plan ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.plan ul li {
+display: flex;
+align-items: center;
+margin-bottom: 0.8rem; /* Réduction de l'espacement entre les lignes */
+font-size: 0.79rem;
+}
+
+/* Style des icônes "✔" */
+.plan ul li .checkmark {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 30px;
+height: 30px;
+background-color: rgba(0, 255, 0, 0.2); /* Fond vert avec faible opacité */
+color: rgb(20, 190, 20);
+border-radius: 50%;
+font-size: 0.95rem;
+margin-right: 1rem; /* Espacement entre l'icône et le texte */
+}
+
+/* Boutons "En savoir plus" */
+.more {
+display: inline-block;
+margin-top: 1rem;
+text-decoration: none;
+font-weight: bold;
+font-size: 1rem; /* Taille par défaut */
+float: right; 
+position: relative; /* Nécessaire pour l'effet hover */
+transition: all 0.3s ease; /* Animation fluide */
+}
+
+/* Effet au survol */
+.more:hover {
+color: #357abd; /* Couleur légèrement plus foncée au survol */
+}
+
+.more::after {
+content: "→";
+font-size: 1.2rem; /* Taille légèrement plus grande par défaut */
+margin-left: 0.2rem; /* Espacement entre le texte et la flèche */
+transition: all 0.3s ease; /* Animation fluide */
+}
+
+.more:hover::after {
+font-size: 1.5rem; /* Agrandit la flèche au survol */
+margin-left: 0.5rem; /* Augmente l'espacement au survol */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+.plans {
+flex-direction: column;
+align-items: center;
+}
+
+h1 {
+position: relative;
+left: 1rem;
+
+}
+
+.plan {
+width: 90%; /* Ajuste la largeur des cartes */
+}
+}
+
+@media (max-width: 480px) {
+
+h1 {
+position: relative;
+left: 1rem;
+
+}
+
+.plan {
+width: 95%; /* Plus compact pour les très petits écrans */
+}
+}
